@@ -1,0 +1,51 @@
+﻿@model Producto
+
+<h1 class="display-4 text-center">Actualizar Producto</h1>
+<h3 class="text-info mt-4">Actualice los campos necesarios y pulse Guardar.</h3>
+<form asp-controller="Producto" asp-action="Actualizar" method="post" class="mt-4">
+    <div class="text-center row">
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <label asp-for="FechaVencimiento" class="control-label"></label>
+                <input asp-for="FechaVencimiento" class="form-control" />
+                <span asp-validation-for="FechaVencimiento" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <label asp-for="IdProveedor" class="control-label"></label>
+                <select asp-for="IdProveedor" class="form-control">
+                    @foreach (var item in AlmacenManager.Instance.Proveedores)
+                    {
+                        <option value="@item.Id">@item.Id - @item.Nombre</option>
+                    }
+                </select>
+                <span asp-validation-for="IdProveedor" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-5">
+                <button type="submit" class="btn btn-success mt-4">Guardar</button>
+            </div>
+        </div>
+    </div>
+</form>

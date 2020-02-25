@@ -1,18 +1,33 @@
 ﻿@model Proveedor
 
-<div class="text-center">
-    <h3 class="alert alert-danger">¿Está seguro de borrar el proveedor?</h3>
-    <p>El proveedor <b>@Model.Nombre</b> con ID <b>@Model.Id</b>, cuya dirección es: <b>@Model.Direccion</b>,
-        el cual tiene el número de contacto @Model.Num_telef será eliminado. Presione el botón <b>Aceptar</b> para confirmar.
-        De lo contrario, pulse <b>Volver</b>.
-    </p>
-    <form method="post" asp-controller="Producto" asp-action="Eliminar">
+    <div class="text-center">
 
-        <input type="hidden" value="@Model.Id"/>
+        @if (AlmacenManager.Instance.TieneDependenciasConProductos(Model.Id))
+        {
+            <h3 class="alert alert-info">No puede borrar este proveedor</h3>
+            <p>
+                Este proveedor tiene actualmente productos que dependen de él, por lo que
+                primero tiene que borrar dichos productos para borrar este proveedor.
+            </p>
 
-        <button type="submit" class="btn btn-danger">Aceptar</button>
-        <a class="btn btn-primary" asp-controller="Proveedor" asp-action="List">Volver</a>
-    </form>
+            <a class="btn btn-primary" asp-controller="Proveedor" asp-action="List">Volver</a>
+        }
+        else
+        {
+            <h3 class="alert alert-danger">¿Está seguro de borrar el proveedor?</h3>
+            <p>
+                El proveedor <b>@Model.Nombre</b> con ID <b>@Model.Id</b>, cuya dirección es: <b>@Model.Direccion</b>,
+                el cual tiene el número de contacto <b>@Model.Num_telef</b> será eliminado. Presione el botón <b>Aceptar</b> para confirmar.
+                De lo contrario, pulse <b>Volver</b>.
+            </p>
+            <form method="post" asp-controller="Producto" asp-action="Eliminar">
 
-    
-</div>
+                <input type="hidden" value="@Model.Id" />
+
+                <button type="submit" class="btn btn-danger">Aceptar</button>
+                <a class="btn btn-primary" asp-controller="Proveedor" asp-action="List">Volver</a>
+            </form>
+        }
+
+
+    </div>

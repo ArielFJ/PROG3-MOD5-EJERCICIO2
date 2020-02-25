@@ -57,6 +57,7 @@ namespace Ejercicio2.Models
             Proveedores.Remove(ObtenerProveedor(id));
         }
 
+
         public Proveedor ObtenerProveedor(int id)
         {
             return Proveedores.FirstOrDefault(p => p.Id == id);
@@ -65,6 +66,14 @@ namespace Ejercicio2.Models
         public Producto ObtenerProducto(int id)
         {
             return Productos.FirstOrDefault(p => p.Id == id);
+        }
+
+        public bool TieneDependenciasConProductos(int id)
+        {
+            foreach (var item in Productos)
+                if (item.IdProveedor == id)
+                    return true;
+            return false;
         }
 
     }

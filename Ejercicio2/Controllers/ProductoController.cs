@@ -48,7 +48,26 @@ namespace Ejercicio2.Controllers
         public IActionResult Eliminar(int id)
         {
 
-            AlmacenManager.Instance.EliminarProducto((int)id);
+            AlmacenManager.Instance.EliminarProducto(id);
+            return RedirectToAction("List");
+        }
+
+        public IActionResult Actualizar(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var producto = AlmacenManager.Instance.ObtenerProducto((int)id);
+
+            if (producto == null) return NotFound();
+
+            return View(producto);
+        }
+
+        [HttpPost]
+        public IActionResult Actualizar(Producto nuevo, int id)
+        {
+
+            AlmacenManager.Instance.ActualizarProducto(id, nuevo);
             return RedirectToAction("List");
         }
     }

@@ -112,3 +112,5 @@ D:\Documents\_ITLA\PROGRAMACION\PROGRAMACION 3\Módulo 5\Ejercicio2\Ejercicio2\o
 D:\Documents\_ITLA\PROGRAMACION\PROGRAMACION 3\Módulo 5\Ejercicio2\Ejercicio2\obj\Debug\netcoreapp3.1\Razor\Views\Proveedor\Agregar.cshtml.g.cs
 D:\Documents\_ITLA\PROGRAMACION\PROGRAMACION 3\Módulo 5\Ejercicio2\Ejercicio2\obj\Debug\netcoreapp3.1\Razor\Views\Proveedor\Eliminar.cshtml.g.cs
 D:\Documents\_ITLA\PROGRAMACION\PROGRAMACION 3\Módulo 5\Ejercicio2\Ejercicio2\obj\Debug\netcoreapp3.1\Razor\Views\Proveedor\List.cshtml.g.cs
+D:\Documents\_ITLA\PROGRAMACION\PROGRAMACION 3\Módulo 5\Ejercicio2\Ejercicio2\obj\Debug\netcoreapp3.1\Razor\Views\Producto\Actualizar.cshtml.g.cs
+D:\Documents\_ITLA\PROGRAMACION\PROGRAMACION 3\Módulo 5\Ejercicio2\Ejercicio2\obj\Debug\netcoreapp3.1\Razor\Views\Proveedor\Actualizar.cshtml.g.cs

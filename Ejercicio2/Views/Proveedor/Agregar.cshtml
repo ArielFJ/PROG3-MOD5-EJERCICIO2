@@ -1,6 +1,8 @@
 ﻿@model Proveedor
 
-<h1 class="display-4 text-center">Agregar Proveedor</h1>
+<div class="text-center align-items-center">
+
+<h1 class="display-4">Agregar Proveedor</h1>
 
 @if (AlmacenManager.Instance.Proveedores.Count > 0)
 {
@@ -47,3 +49,4 @@ else
         <a class="btn btn-success" asp-controller="Proveedor" asp-action="Agregar">Pulse para agregar proveedor</a>
     </div>
 }
+</div>

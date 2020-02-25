@@ -37,17 +37,36 @@ namespace Ejercicio2.Controllers
         {
             if (id == null) return NotFound();
 
-            var producto = AlmacenManager.Instance.ObtenerProveedor((int)id);
+            var proveedor = AlmacenManager.Instance.ObtenerProveedor((int)id);
 
-            if (producto == null) return NotFound();
+            if (proveedor == null) return NotFound();
 
-            return View(producto);
+            return View(proveedor);
         }
 
         [HttpPost]
         public IActionResult Eliminar(int id)
         {
-            AlmacenManager.Instance.EliminarProveedor((int)id);
+            AlmacenManager.Instance.EliminarProveedor(id);
+            return RedirectToAction("List");
+        }
+
+        public IActionResult Actualizar(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var proveedor = AlmacenManager.Instance.ObtenerProveedor((int)id);
+
+            if (proveedor == null) return NotFound();
+
+            return View(proveedor);
+        }
+
+        [HttpPost]
+        public IActionResult Actualizar(Proveedor nuevo, int id)
+        {
+
+            AlmacenManager.Instance.ActualizarProveedor(id, nuevo);
             return RedirectToAction("List");
         }
     }
