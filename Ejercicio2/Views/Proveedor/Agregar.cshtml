@@ -4,9 +4,8 @@
 
 <h1 class="display-4">Agregar Proveedor</h1>
 
-@if (AlmacenManager.Instance.Proveedores.Count > 0)
-{
     <h3 class="text-info mt-4">Llene el formulario y pulse Guardar para agregar nuevo producto.</h3>
+    <br />
     <form asp-controller="Proveedor" asp-action="Agregar" method="post" class="mt-4">
         <div class="text-center row">
 
@@ -41,12 +40,5 @@
             </div>
         </div>   
     </form>
-}
-else
-{
-    <div class="text-center">
-        <h3 class="alert alert-warning">Aún no hay proveedores.</h3>
-        <a class="btn btn-success" asp-controller="Proveedor" asp-action="Agregar">Pulse para agregar proveedor</a>
-    </div>
-}
+
 </div>

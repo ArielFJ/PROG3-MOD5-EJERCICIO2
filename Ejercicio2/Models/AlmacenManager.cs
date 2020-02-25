@@ -11,12 +11,8 @@ namespace Ejercicio2.Models
 
         public static readonly AlmacenManager Instance = new AlmacenManager();
 
-        public List<Producto> Productos { get; } = new List<Producto>() { 
-            new Producto{Id=1, Nombre="Aceite", FechaVencimiento = DateTime.Parse("12,12,12"), Descripcion="Nada", IdProveedor = 1}
-        };
-        public List<Proveedor> Proveedores { get; } = new List<Proveedor>() { 
-            new Proveedor { Id = 1, Nombre="Grupo Ramos", Direccion="Allí mismo", Num_telef="8298988989"}
-        };
+        public List<Producto> Productos { get; } = new List<Producto>();
+        public List<Proveedor> Proveedores { get; } = new List<Proveedor>();
 
         public void ActualizarProducto(int id, Producto p)
         {

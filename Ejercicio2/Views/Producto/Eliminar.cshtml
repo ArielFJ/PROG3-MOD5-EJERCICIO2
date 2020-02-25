@@ -4,7 +4,7 @@
     <h3 class="alert alert-danger">¿Está seguro de borrar el producto?</h3>
     <p>El producto <b>@Model.Nombre</b> con ID <b>@Model.Id</b>, cuya descripción es: <b>@Model.Descripcion</b>,
         el cual tiene una fecha de vencimiento de @Model.FechaVencimiento.ToShortDateString() y su proveedor es 
-        <b>@AlmacenManager.Instance.ObtenerProveedor(Model.Id).Nombre</b> será eliminado. Presione el botón <b>Aceptar</b> para confirmar.
+        <b>@AlmacenManager.Instance.ObtenerProveedor(Model.IdProveedor).Nombre</b> será eliminado. Presione el botón <b>Aceptar</b> para confirmar.
         De lo contrario, pulse <b>Volver</b>.
     </p>
     <form method="post" asp-controller="Producto" asp-action="Eliminar">

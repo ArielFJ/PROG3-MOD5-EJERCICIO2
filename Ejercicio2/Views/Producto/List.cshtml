@@ -8,7 +8,8 @@
     <div class="mt-4">
         @if (AlmacenManager.Instance.Productos.Count > 0)
         {
-            <table class="table">
+            <a class="btn btn-success text-white" asp-controller="Producto" asp-action="Agregar">Agregar Producto</a>
+            <table class="table mt-3">
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>

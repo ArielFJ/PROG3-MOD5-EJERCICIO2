@@ -8,7 +8,8 @@
     <div class="mt-4">
         @if (AlmacenManager.Instance.Proveedores.Count > 0)
         {
-            <table class="table">
+            <a class="btn btn-success text-white" asp-controller="Proveedor" asp-action="Agregar">Agregar Proveedor</a>
+            <table class="table mt-3">
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
@@ -31,7 +32,7 @@
         else
         {
             <h3 class="alert alert-info">Aún no ha agregado ningún proveedor.</h3>
-            <a class="btn btn-success text-white" asp-controller="Producto" asp-action="Agregar">Agregar Proveedor</a>
+            <a class="btn btn-success text-white" asp-controller="Proveedor" asp-action="Agregar">Agregar Proveedor</a>
         }
     </div>
 </div>
