@@ -1,7 +1,7 @@
 ﻿@model Producto
 
 <div class="text-center">
-    <h3 class="alert alert-danger">¿Está seguro de borrar el contacto?</h3>
+    <h3 class="alert alert-danger">¿Está seguro de borrar el producto?</h3>
     <p>El producto <b>@Model.Nombre</b> con ID <b>@Model.Id</b>, cuya descripción es: <b>@Model.Descripcion</b>,
         el cual tiene una fecha de vencimiento de @Model.FechaVencimiento.ToShortDateString() y su proveedor es 
         @AlmacenManager.Instance.ObtenerProveedor(Model.Id).Nombre será eliminado. Presione el botón <b>Aceptar</b> para confirmar.

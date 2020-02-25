@@ -47,6 +47,7 @@ namespace Ejercicio2.Controllers
         [HttpPost]
         public IActionResult Eliminar(int id)
         {
+
             AlmacenManager.Instance.EliminarProducto((int)id);
             return RedirectToAction("List");
         }

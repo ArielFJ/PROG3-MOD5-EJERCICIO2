@@ -17,11 +17,13 @@ namespace Ejercicio2.Models
 
         [Required]
         [StringLength(75)]
+        [Display(Name = "Dirección")]
         public string Direccion { get; set; }
 
         [Required]
-        [StringLength(10)]
         [DataType(DataType.PhoneNumber)]
+        [Display(Name ="Teléfono")]
+        [RegularExpression(@"^(\d{10})$", ErrorMessage = "Need to have 10 decimal digits")]
         public string Num_telef { get; set; }
     }
 }

@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Productos";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Productos</h1>
+
+    <div class="mt-4">
+        @if (AlmacenManager.Instance.Proveedores.Count > 0)
+        {
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                </tr>
+                @foreach (var item in AlmacenManager.Instance.Proveedores)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Direccion</td>
+                        <td>@item.Num_telef</td>
+                        <td><a class="btn btn-danger" asp-controller="Producto" asp-action="Eliminar" asp-route-id="@item.Id">Eliminar</a></td>
+                        <td><a class="btn btn-warning" asp-controller="Producto" asp-action="Actualizar" asp-route-id="@item.Id">Actualizar</a></td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <h3 class="alert alert-info">Aún no ha agregado ningún proveedor.</h3>
+            <a class="btn btn-success text-white" asp-controller="Producto" asp-action="Agregar">Agregar Proveedor</a>
+        }
+    </div>
+</div>

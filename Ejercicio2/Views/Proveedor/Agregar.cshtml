@@ -1,0 +1,49 @@
+﻿@model Proveedor
+
+<h1 class="display-4 text-center">Agregar Proveedor</h1>
+
+@if (AlmacenManager.Instance.Proveedores.Count > 0)
+{
+    <h3 class="text-info mt-4">Llene el formulario y pulse Guardar para agregar nuevo producto.</h3>
+    <form asp-controller="Proveedor" asp-action="Agregar" method="post" class="mt-4">
+        <div class="text-center row">
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control"/>
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label asp-for="Direccion" class="control-label"></label>
+                    <input asp-for="Direccion"  class="form-control"/>
+                    <span asp-validation-for="Direccion" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label asp-for="Num_telef" class="control-label"></label>
+                    <input asp-for="Num_telef" class="form-control"/>
+                    <span asp-validation-for="Num_telef" class="text-danger"></span>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <div class="col-md-5">
+                    <button type="submit" class="btn btn-success mt-4">Guardar</button>
+                </div>
+            </div>
+        </div>   
+    </form>
+}
+else
+{
+    <div class="text-center">
+        <h3 class="alert alert-warning">Aún no hay proveedores.</h3>
+        <a class="btn btn-success" asp-controller="Proveedor" asp-action="Agregar">Pulse para agregar proveedor</a>
+    </div>
+}

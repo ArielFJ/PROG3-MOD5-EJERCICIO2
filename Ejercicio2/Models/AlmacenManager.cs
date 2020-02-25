@@ -41,6 +41,7 @@ namespace Ejercicio2.Models
 
         public void AgregarProveedor(Proveedor p)
         {
+            p.Id = Productos.Max(c => c.Id) + 1;
             Proveedores.Add(p);
         }
 
