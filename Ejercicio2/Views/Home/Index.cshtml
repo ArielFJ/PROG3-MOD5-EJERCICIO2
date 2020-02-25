@@ -3,34 +3,7 @@
 }
 
     <div class="text-center">
-        <h1 class="display-4">Productos</h1>
+        <h1 class="display-4">Welcome</h1>
 
-        <div class="mt-4">
-            @if (Model.Carros.Count > 0)
-            {
-                <table class="table">
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Color</th>
-                        <th>Marca</th>
-                        <th>Chasis</th>
-                    </tr>
-                    @foreach (var carro in Model.Carros)
-                    {
-                        <tr>
-                            <td>@carro.Id</td>
-                            <td>@carro.Nombre</td>
-                            <td>@carro.Color.ToString()</td>
-                            <td>@carro.Marca</td>
-                            <td>@carro.Chasis</td>
-                        </tr>
-                    }
-                </table>
-            }
-            else
-            {
-                <h3 class="alert alert-info">Aún no ha agregado ningún carro.</h3>
-            }
-        </div>
+        
     </div>

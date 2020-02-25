@@ -24,6 +24,8 @@
                         <td>@item.Descripcion</td>
                         <td>@item.FechaVencimiento.ToShortDateString()</td>
                         <td>@(AlmacenManager.Instance.ObtenerProveedor(item.IdProveedor).Nombre)</td>
+                        <td><a class="btn btn-danger" asp-controller="Producto" asp-action="Eliminar" asp-route-id="@item.Id">Eliminar</a></td>
+                        <td><a class="btn btn-warning" asp-controller="Producto" asp-action="Actualizar" asp-route-id="@item.Id">Actualizar</a></td>
                     </tr>
                 }
             </table>

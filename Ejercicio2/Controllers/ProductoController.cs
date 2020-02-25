@@ -28,9 +28,27 @@ namespace Ejercicio2.Controllers
             if (ModelState.IsValid)
             {
                 AlmacenManager.Instance.AgregarProducto(producto);
-                return View("List");
+                return RedirectToAction("List");
             }
             return View(producto);
+        }
+
+        public IActionResult Eliminar(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var producto = AlmacenManager.Instance.ObtenerProducto((int)id);
+
+            if (producto == null) return NotFound();
+
+            return View(producto);
+        }
+
+        [HttpPost]
+        public IActionResult Eliminar(int id)
+        {
+            AlmacenManager.Instance.EliminarProducto((int)id);
+            return RedirectToAction("List");
         }
     }
 }

@@ -108,3 +108,4 @@ D:\Documents\_ITLA\PROGRAMACION\PROGRAMACION 3\Módulo 5\Ejercicio2\Ejercicio2\b
 D:\Documents\_ITLA\PROGRAMACION\PROGRAMACION 3\Módulo 5\Ejercicio2\Ejercicio2\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Documents\_ITLA\PROGRAMACION\PROGRAMACION 3\Módulo 5\Ejercicio2\Ejercicio2\obj\Debug\netcoreapp3.1\Razor\Views\Producto\Agregar.cshtml.g.cs
 D:\Documents\_ITLA\PROGRAMACION\PROGRAMACION 3\Módulo 5\Ejercicio2\Ejercicio2\obj\Debug\netcoreapp3.1\Razor\Views\Producto\List.cshtml.g.cs
+D:\Documents\_ITLA\PROGRAMACION\PROGRAMACION 3\Módulo 5\Ejercicio2\Ejercicio2\obj\Debug\netcoreapp3.1\Razor\Views\Producto\Eliminar.cshtml.g.cs
