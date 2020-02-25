@@ -7,13 +7,6 @@
     <h3 class="text-info mt-4">Llene el formulario y pulse Guardar para agregar nuevo producto.</h3>
     <form asp-controller="Producto" asp-action="Agregar" method="post" class="mt-4">
         <div class="text-center row">
-            <div class="form-group">
-                <div class="col-md-12">
-                    <label asp-for="Id" class="control-label"></label>
-                    <input asp-for="Id" class="form-control" />
-                    <span asp-validation-for="Id" class="text-danger"></span>
-                </div>
-            </div>
 
             <div class="form-group">
                 <div class="col-md-12">
@@ -26,7 +19,7 @@
             <div class="form-group">
                 <div class="col-md-12">
                     <label asp-for="Descripcion" class="control-label"></label>
-                    <select asp-for="Descripcion" asp-items="Html.GetEnumSelectList<ConsoleColor>()" class="custom-select"></select>
+                    <input asp-for="Descripcion"  class="form-control"/>
                     <span asp-validation-for="Descripcion" class="text-danger"></span>
                 </div>
             </div>
@@ -34,7 +27,7 @@
             <div class="form-group">
                 <div class="col-md-12">
                     <label asp-for="FechaVencimiento" class="control-label"></label>
-                    <input asp-for="FechaVencimiento" class="form-control" value="" />
+                    <input asp-for="FechaVencimiento" class="form-control"/>
                     <span asp-validation-for="FechaVencimiento" class="text-danger"></span>
                 </div>
             </div>
@@ -42,7 +35,12 @@
             <div class="form-group">
                 <div class="col-md-12">
                     <label asp-for="IdProveedor" class="control-label"></label>
-                    <input asp-for="IdProveedor" class="form-control" value="" />
+                    <select asp-for="IdProveedor" class="form-control" >
+                        @foreach(var item in AlmacenManager.Instance.Proveedores)
+                        {
+                            <option value="@item.Id">@item.Id - @item.Nombre</option>
+                        }
+                    </select>
                     <span asp-validation-for="IdProveedor" class="text-danger"></span>
                 </div>
             </div>

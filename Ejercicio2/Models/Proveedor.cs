@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio2.Models
 {
-    public class Proveedor : IEntidad
+    public class Proveedor
     {
         [Required]
         public int Id { get; set; }
