@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace Ejercicio2.Models
 {
-    interface Entidad
+    public interface IEntidad
     {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Ejercicio2.Controllers
 {
-    public class ProveedotrController : Controller
+    public class ProveedorController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()

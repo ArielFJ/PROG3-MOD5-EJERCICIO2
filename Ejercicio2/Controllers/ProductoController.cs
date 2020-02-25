@@ -11,7 +11,7 @@ namespace Ejercicio2.Controllers
     public class ProductoController : Controller
     {
         // GET: /<controller>/
-        public IActionResult Index()
+        public IActionResult List()
         {
             return View();
         }
