@@ -35,13 +35,15 @@ namespace Ejercicio2.Models
 
         public void AgregarProducto(Producto p)
         {
-            p.Id = Productos.Max(c => c.Id) + 1;
+            var id = Productos.Count > 0 ? Productos.Max(s => s.Id) + 1 : 0;
+            p.Id = id;
             Productos.Add(p);
         }
 
         public void AgregarProveedor(Proveedor p)
         {
-            p.Id = Productos.Max(c => c.Id) + 1;
+            var id = Proveedores.Count > 0 ? Proveedores.Max(s => s.Id) + 1 : 0;
+            p.Id = id;
             Proveedores.Add(p);
         }
 
