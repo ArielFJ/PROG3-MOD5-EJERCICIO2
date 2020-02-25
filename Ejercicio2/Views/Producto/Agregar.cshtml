@@ -1,0 +1,64 @@
+﻿@model Producto
+
+<h1 class="display-4 text-center">Agregar Producto</h1>
+
+@if (AlmacenManager.Instance.Proveedores.Count > 0)
+{
+    <h3 class="text-info mt-4">Llene el formulario y pulse Guardar para agregar nuevo producto.</h3>
+    <form asp-controller="Producto" asp-action="Agregar" method="post" class="mt-4">
+        <div class="text-center row">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label asp-for="Id" class="control-label"></label>
+                    <input asp-for="Id" class="form-control" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" value="" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label asp-for="Descripcion" class="control-label"></label>
+                    <select asp-for="Descripcion" asp-items="Html.GetEnumSelectList<ConsoleColor>()" class="custom-select"></select>
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label asp-for="FechaVencimiento" class="control-label"></label>
+                    <input asp-for="FechaVencimiento" class="form-control" value="" />
+                    <span asp-validation-for="FechaVencimiento" class="text-danger"></span>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label asp-for="IdProveedor" class="control-label"></label>
+                    <input asp-for="IdProveedor" class="form-control" value="" />
+                    <span asp-validation-for="IdProveedor" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-5">
+                    <button type="submit" class="btn btn-success mt-4">Guardar</button>
+                </div>
+            </div>
+        </div>   
+    </form>
+}
+else
+{
+    <div class="text-center">
+        <h3 class="alert alert-warning">No puede agregar productos ya que no hay proveedores.</h3>
+        <a class="btn btn-success" asp-controller="Proveedor" asp-action="Agregar">Pulse para agregar proveedor</a>
+    </div>
+}

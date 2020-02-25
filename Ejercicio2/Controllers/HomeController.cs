@@ -23,10 +23,9 @@ namespace Ejercicio2.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Formulario(string data)
+        public IActionResult Formulario()
         {
-
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,5 +1,37 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Productos";
 }
+
+<div class="text-center">
+    <h1 class="display-4">Productos</h1>
+
+    <div class="mt-4">
+        @if (AlmacenManager.Instance.Productos.Count > 0)
+        {
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Fecha De Vencimiento</th>
+                    <th>Proveedor</th>
+                </tr>
+                @foreach (var item in AlmacenManager.Instance.Productos)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Descripcion</td>
+                        <td>@item.FechaVencimiento</td>
+                        <td>@(AlmacenManager.Instance.ObtenerProveedor(item.IdProveedor).Nombre)</td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <h3 class="alert alert-info">Aún no ha agregado ningún producto.</h3>
+            <a class="btn btn-success text-white" asp-controller="Producto" asp-action="Agregar">Agregar Producto</a>
+        }
+    </div>
+</div>

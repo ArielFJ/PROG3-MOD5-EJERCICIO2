@@ -7,8 +7,26 @@ namespace Ejercicio2.Models
 {
     public class AlmacenManager : IAlmacenManager
     {
-        public List<Producto> Productos { get; }
-        public List<Proveedor> Proveedores { get; }
+        private AlmacenManager()
+        {
+
+        }
+
+        private static AlmacenManager instance = new AlmacenManager();
+
+        public static AlmacenManager Instance { 
+            get
+            {
+                return instance;
+            }
+        }
+
+        public List<Producto> Productos { get; } = new List<Producto>() { 
+            new Producto{Id=1, Nombre="Aceite", FechaVencimiento = DateTime.Parse("12,12,12"), Descripcion="Nada", IdProveedor = 1}
+        };
+        public List<Proveedor> Proveedores { get; } = new List<Proveedor>() { 
+            new Proveedor { Id = 1, Nombre="Grupo Ramos", Direccion="Allí mismo", Num_telef="8298988989"}
+        };
 
         public void ActualizarEntidad(int id, IEntidad nuevosDatos)
         {
@@ -51,6 +69,11 @@ namespace Ejercicio2.Models
             {
                 Proveedores.Remove(Proveedores.FirstOrDefault(p => p.Id == id));
             }
+        }
+
+        public Proveedor ObtenerProveedor(int id)
+        {
+            return Proveedores.FirstOrDefault(p => p.Id == id);
         }
 
     }
